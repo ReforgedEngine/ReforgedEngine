@@ -1,16 +1,18 @@
-## Hi there 👋
+# ReforgedEngine ⚒️ 2.5D TMX Iso Engine
 
-<!--
-**ReforgedEngine/ReforgedEngine** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Pixel-perfect isometric engine for Tiled TMX maps. UO-style multi-floor, roofs (NW/NE/SE/SW), infinite chunks, ECS 1M tiles @60FPS.
 
-Here are some ideas to get you started:
+## 🎮 Status: v0.1.0 Alpha
+- ECS Core (custom SoA)
+- TMX Parser (chunks/groups/props)
+- Deferred SortKey render
+- Collision TMX (ellipse/rect/poly)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**FREE Core**: MIT (main branch).
+**PRO ($5 Patreon)**: Lighting/FOV/Streaming (pro branch).
+
+## 🚀 Quick Demo
+```csharp
+var world = new EcsWorld();
+world.LoadTmx("forgedlands.tmx");
+world.Draw(spriteBatch, camera.Matrix);  // 65k tiles 60FPS!
