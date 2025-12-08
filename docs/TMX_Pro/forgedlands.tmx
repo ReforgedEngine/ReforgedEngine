@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.11.2" orientation="isometric" renderorder="left-down" width="64" height="32" tilewidth="64" tileheight="64" infinite="1" nextlayerid="129" nextobjectid="10695">
+ <editorsettings>
+  <export target="forgedlands_pro_template.tmx" format="tmx"/>
+ </editorsettings>
+ <properties>
+  <property name="automapping_rules" value="automapping/rules_room3x3.tmx"/>
+  <property name="chunk_size" type="int" value="16"/>
+  <property name="collision_precision" value="per_pixel"/>
+  <property name="default_player_z" type="float" value="3"/>
+  <property name="max_floors" type="int" value="3"/>
+  <property name="z_sort_enabled" value="true"/>
+  <property name="z_step_per_floor" type="float" value="4"/>
+ </properties>
+ <tileset firstgid="1" source="../Tilesets/Buildings/Medieval Building/Building_Stone_1/Building_Stone.tsx"/>
+ <tileset firstgid="94" source="../Tilesets/Ground/GroundTextures/GroundTextures.tsx"/>
+ <tileset firstgid="558" source="../Tilesets/Buildings/Medieval Building/Building_Roofs_3/roof_dark.tsx"/>
+ <tileset firstgid="585" source="../Tilesets/Buildings/Medieval Building/Building_Doors/Doors.tsx"/>
+ <group id="1" name="DeepTerrain">
+  <properties>
+   <property name="collision_type" value="none"/>
+   <property name="purpose" value="visual_depth_only"/>
+   <property name="z_sort_enabled" value="true"/>
+  </properties>
+  <objectgroup id="2" name="Abyss_1">
+   <properties>
+    <property name="RenderLayer" value="Abyss1"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-5"/>
+    <property name="z_range" value="-5--4.8"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="3" name="Abyss_2">
+   <properties>
+    <property name="RenderLayer" value="Abyss2"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-10"/>
+    <property name="z_range" value="-10--9.8"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="4" name="Abyss_3">
+   <properties>
+    <property name="RenderLayer" value="Abyss3"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-15"/>
+    <property name="z_range" value="-15--14.8"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="5" name="Abyss_4">
+   <properties>
+    <property name="RenderLayer" value="Abyss4"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-20"/>
+    <property name="z_range" value="-20--19.7"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="6" name="Abyss_5">
+   <properties>
+    <property name="RenderLayer" value="Abyss5"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-25"/>
+    <property name="z_range" value="-25--24.7"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="7" name="Abyss_6">
+   <properties>
+    <property name="RenderLayer" value="Abyss6"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-30"/>
+    <property name="z_range" value="-30--29.7"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="8" name="Abyss_7">
+   <properties>
+    <property name="RenderLayer" value="Abyss7"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-35"/>
+    <property name="z_range" value="-35--34.7"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="9" name="Abyss_8">
+   <properties>
+    <property name="RenderLayer" value="Abyss8"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="-40"/>
+    <property name="z_range" value="-40--39.7"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="10" name="Fog_Back">
+   <properties>
+    <property name="RenderLayer" value="FogBack"/>
+    <property name="collision_type" value="none"/>
+    <property name="is_transparent" value="true"/>
+    <property name="z_base" type="float" value="-45"/>
+    <property name="z_range" value="-45--44.5"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="11" name="Clouds_Back">
+   <properties>
+    <property name="RenderLayer" value="CloudsBack"/>
+    <property name="collision_type" value="none"/>
+    <property name="is_transparent" value="true"/>
+    <property name="z_base" type="float" value="-42"/>
+    <property name="z_range" value="-42--41.5"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="12" name="Fog_Mid">
+   <properties>
+    <property name="RenderLayer" value="FogMid"/>
+    <property name="collision_type" value="none"/>
+    <property name="is_transparent" value="true"/>
+    <property name="z_base" type="float" value="-3"/>
+    <property name="z_range" value="-3--2.5"/>
+   </properties>
+  </objectgroup>
+ </group>
+ <group id="13" name="Terrain">
+  <properties>
+   <property name="purpose" value="terrain_foundation"/>
+  </properties>
+  <layer id="14" name="Heightmap" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="Heightmap"/>
+    <property name="purpose" value="elevation_data"/>
+    <property name="z_base" type="float" value="-2"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="15" name="Rock_Layer" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="RockLayer"/>
+    <property name="purpose" value="base_rock"/>
+    <property name="z_base" type="float" value="-1.8"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="16" name="Soil_Depth" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="SoilDepth"/>
+    <property name="purpose" value="underground_soil"/>
+    <property name="z_base" type="float" value="-1.5"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="17" name="Water_Deep" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="WaterDeep"/>
+    <property name="purpose" value="deep_water_bed"/>
+    <property name="z_base" type="float" value="-1.3"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="18" name="Water_Surface" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="WaterSurface"/>
+    <property name="is_transparent" value="true"/>
+    <property name="purpose" value="water_visual"/>
+    <property name="z_base" type="float" value="-1"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="19" name="Terrain_Base" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="TerrainBase"/>
+    <property name="purpose" value="base_terrain"/>
+    <property name="z_base" type="float" value="-0.8"/>
+   </properties>
+   <data encoding="base64">
+    <chunk x="-16" y="-32" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAA==
+  </chunk>
+    <chunk x="0" y="-32" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="16" y="-32" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="-16" y="-16" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAXgEAAA==
+  </chunk>
+    <chunk x="0" y="-16" width="16" height="16">
+   AAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAABAAAAAQAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAAAQAAAAEAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAXgEAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAXgEAAAAAAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAABeAQAAAAAAAF4BAAAAAAAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAABeAQAAAAAAAA==
+  </chunk>
+    <chunk x="16" y="-16" width="16" height="16">
+   AAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAF4BAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="-16" y="0" width="16" height="16">
+   AAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAXgEAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAXgEAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAXgEAAA==
+  </chunk>
+    <chunk x="0" y="0" width="16" height="16">
+   XgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAAAAAAAAAAABeAQAAXgEAAF4BAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAF4BAABeAQAAXgEAAAAAAABeAQAAXgEAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAAAAAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAF4BAABeAQAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAABeAQAAXgEAAF4BAAAAAAAAAAAAAAAAAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAQAAAAAAAF4BAABeAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="16" y="0" width="16" height="16">
+   XgEAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="-16" y="16" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgEAAF4BAABeAQAAXgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="0" y="16" width="16" height="16">
+   XgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+   </data>
+  </layer>
+  <layer id="20" name="Biome_Details" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="TerrainDetail"/>
+    <property name="purpose" value="terrain_details"/>
+    <property name="z_base" type="float" value="-0.5"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="21" name="Paths_Trails" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="PathsTrails"/>
+    <property name="purpose" value="natural_paths"/>
+    <property name="z_base" type="float" value="-0.3"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <layer id="22" name="Surface_Rocks" width="96" height="96">
+   <properties>
+    <property name="RenderLayer" value="SurfaceRocks"/>
+    <property name="purpose" value="surface_rocks"/>
+    <property name="z_base" type="float" value="-0.1"/>
+   </properties>
+   <data encoding="base64"/>
+  </layer>
+  <objectgroup id="23" name="Resource_Ore">
+   <properties>
+    <property name="RenderLayer" value="ResourceOre"/>
+    <property name="interactive" value="true"/>
+    <property name="resource_type" value="ore_vein"/>
+    <property name="z_base" type="float" value="0.1"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="24" name="Resource_Fishing">
+   <properties>
+    <property name="RenderLayer" value="ResourceFishing"/>
+    <property name="interactive" value="true"/>
+    <property name="resource_type" value="fishing_spot"/>
+    <property name="z_base" type="float" value="0.2"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="25" name="Resource_Herbs">
+   <properties>
+    <property name="RenderLayer" value="ResourceHerbs"/>
+    <property name="interactive" value="true"/>
+    <property name="resource_type" value="herb"/>
+    <property name="z_base" type="float" value="0.3"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="26" name="Resource_Rocks">
+   <properties>
+    <property name="RenderLayer" value="ResourceRocks"/>
+    <property name="interactive" value="true"/>
+    <property name="resource_type" value="rock"/>
+    <property name="z_base" type="float" value="0.4"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="27" name="Resource_Trees">
+   <properties>
+    <property name="RenderLayer" value="ResourceTrees"/>
+    <property name="interactive" value="true"/>
+    <property name="resource_type" value="tree"/>
+    <property name="z_base" type="float" value="0.5"/>
+   </properties>
+  </objectgroup>
+ </group>
+ <group id="28" name="Floor_0">
+  <properties>
+   <property name="floor" type="int" value="0"/>
+  </properties>
+  <layer id="29" name="Ground" width="64" height="32">
+   <properties>
+    <property name="RenderLayer" value="Floor"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="0"/>
+    <property name="z_range" value="0.0-0.9"/>
+   </properties>
+   <data encoding="base64">
+    <chunk x="-16" y="-16" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+    <chunk x="0" y="-16" width="16" height="16">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+  </chunk>
+   </data>
+  </layer>
+  <objectgroup id="30" name="Decals">
+   <properties>
+    <property name="RenderLayer" value="Decals"/>
+    <property name="collision_type" value="surface"/>
+    <property name="z_base" type="float" value="1"/>
+    <property name="z_range" value="1.0-1.2"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="31" name="Corner_Simple">
+   <properties>
+    <property name="RenderLayer" value="CornerSimple"/>
+    <property name="collision_type" value="surface"/>
+    <property name="z_base" type="float" value="1.3"/>
+    <property name="z_range" value="1.3-1.4"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="32" name="Walls_NW">
+   <properties>
+    <property name="RenderLayer" value="WallsNW"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="NW"/>
+    <property name="z_base" type="float" value="1.5"/>
+    <property name="z_range" value="1.5-1.7"/>
+   </properties>
+   <object id="10524" gid="65" x="-64" y="-896" width="64" height="160"/>
+   <object id="10525" gid="65" x="-64" y="-832" width="64" height="160"/>
+   <object id="10526" gid="65" x="-64" y="-768" width="64" height="160"/>
+   <object id="10527" gid="65" x="-64" y="-704" width="64" height="160"/>
+   <object id="10528" gid="65" x="-64" y="-640" width="64" height="160"/>
+   <object id="10529" gid="65" x="-64" y="-576" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="33" name="Walls_NE">
+   <properties>
+    <property name="RenderLayer" value="WallsNE"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="NE"/>
+    <property name="z_base" type="float" value="1.6"/>
+    <property name="z_range" value="1.6-1.8"/>
+   </properties>
+   <object id="10510" gid="63" x="0" y="-960" width="64" height="160"/>
+   <object id="10511" gid="63" x="64" y="-960" width="64" height="160"/>
+   <object id="10512" gid="63" x="128" y="-960" width="64" height="160"/>
+   <object id="10513" gid="63" x="192" y="-960" width="64" height="160"/>
+   <object id="10514" gid="63" x="256" y="-960" width="64" height="160"/>
+   <object id="10515" gid="63" x="320" y="-960" width="64" height="160"/>
+   <object id="10516" gid="63" x="384" y="-960" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="34" name="Objects_Low">
+   <properties>
+    <property name="RenderLayer" value="ObjectsLow"/>
+    <property name="z_base" type="float" value="1.9"/>
+    <property name="z_range" value="1.9-2.3"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="35" name="Objects_Medium">
+   <properties>
+    <property name="RenderLayer" value="ObjectsMedium"/>
+    <property name="z_base" type="float" value="2.4"/>
+    <property name="z_range" value="2.4-3.3"/>
+   </properties>
+   <object id="10688" gid="19" x="64" y="-896" width="64" height="96"/>
+   <object id="10689" gid="20" x="0" y="-896" width="64" height="128"/>
+  </objectgroup>
+  <group id="119" name="Stairs">
+   <objectgroup id="120" name="Stairs_Stack_1">
+    <properties>
+     <property name="RenderLayer" value="Stairs1"/>
+     <property name="z_base" type="float" value="2.35"/>
+    </properties>
+    <object id="10692" gid="43" x="128" y="-896" width="64" height="96"/>
+   </objectgroup>
+   <objectgroup id="121" name="Stairs_Stack_2">
+    <properties>
+     <property name="RenderLayer" value="Stairs2"/>
+     <property name="z_base" type="float" value="2.45"/>
+    </properties>
+    <object id="10693" gid="43" x="32" y="-928" width="64" height="96"/>
+   </objectgroup>
+   <objectgroup id="122" name="Stairs_Stack_3">
+    <properties>
+     <property name="RenderLayer" value="Stairs3"/>
+     <property name="z_base" type="float" value="2.55"/>
+    </properties>
+    <object id="10694" gid="43" x="-64" y="-960" width="64" height="96"/>
+   </objectgroup>
+  </group>
+  <objectgroup id="37" name="Walls_SE">
+   <properties>
+    <property name="RenderLayer" value="WallsSE"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="SE"/>
+    <property name="z_base" type="float" value="3.4"/>
+    <property name="z_range" value="3.4-3.6"/>
+   </properties>
+   <object id="10504" gid="65" x="384" y="-896" width="64" height="160"/>
+   <object id="10505" gid="65" x="384" y="-832" width="64" height="160"/>
+   <object id="10506" gid="65" x="384" y="-768" width="64" height="160"/>
+   <object id="10507" gid="65" x="384" y="-704" width="64" height="160"/>
+   <object id="10508" gid="65" x="384" y="-640" width="64" height="160"/>
+   <object id="10509" gid="65" x="384" y="-576" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="38" name="Objects_High">
+   <properties>
+    <property name="RenderLayer" value="ObjectsHigh"/>
+    <property name="z_base" type="float" value="3.7"/>
+    <property name="z_range" value="3.7-4.0"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="39" name="Doors">
+   <properties>
+    <property name="RenderLayer" value="Doors"/>
+    <property name="collision_type" value="full"/>
+    <property name="z_base" type="float" value="3.6"/>
+    <property name="z_range" value="1.5-4.7"/>
+   </properties>
+   <object id="10548" gid="599" x="192" y="-592" width="64" height="128"/>
+  </objectgroup>
+  <group id="40" name="Corners">
+   <objectgroup id="41" name="Corner_NE">
+    <properties>
+     <property name="RenderLayer" value="CornerNE"/>
+     <property name="z_base" type="float" value="4.1"/>
+     <property name="z_range" value="4.1-4.15"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="42" name="Corner_SE">
+    <properties>
+     <property name="RenderLayer" value="CornerSE"/>
+     <property name="z_base" type="float" value="4.2"/>
+     <property name="z_range" value="4.2-4.25"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="43" name="Corner_SW">
+    <properties>
+     <property name="RenderLayer" value="CornerSW"/>
+     <property name="z_base" type="float" value="4.3"/>
+     <property name="z_range" value="4.3-4.35"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="44" name="Corner_NW">
+    <properties>
+     <property name="RenderLayer" value="CornerNW"/>
+     <property name="z_base" type="float" value="4.4"/>
+     <property name="z_range" value="4.4-4.45"/>
+    </properties>
+   </objectgroup>
+  </group>
+  <objectgroup id="45" name="Walls_SW">
+   <properties>
+    <property name="RenderLayer" value="WallsSW"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="SW"/>
+    <property name="z_base" type="float" value="4.5"/>
+    <property name="z_range" value="4.5-4.55"/>
+   </properties>
+   <object id="10530" gid="63" x="0" y="-576" width="64" height="160"/>
+   <object id="10531" gid="63" x="64" y="-576" width="64" height="160"/>
+   <object id="10532" gid="63" x="384" y="-576" width="64" height="160"/>
+   <object id="10533" gid="63" x="320" y="-576" width="64" height="160"/>
+   <object id="10535" gid="63" x="256" y="-576" width="64" height="160"/>
+   <object id="10536" gid="63" x="128" y="-576" width="64" height="160"/>
+  </objectgroup>
+  <group id="46" name="Stacks">
+   <objectgroup id="47" name="Stacks_Walls">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="wall_stack"/>
+     <property name="z_base" type="float" value="4.6"/>
+     <property name="z_range" value="4.6-999"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="48" name="Stacks_Decor">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="decor_stack"/>
+     <property name="z_base" type="float" value="4.7"/>
+     <property name="z_range" value="4.7-999"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="49" name="Stacks_RoofSupport">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="roof_support"/>
+     <property name="z_base" type="float" value="4.8"/>
+     <property name="z_range" value="4.8-999"/>
+    </properties>
+   </objectgroup>
+  </group>
+ </group>
+ <group id="50" name="Floor_1">
+  <properties>
+   <property name="floor" type="int" value="1"/>
+   <property name="hide_when_inside" type="bool" value="false"/>
+  </properties>
+  <objectgroup id="128" name="Ground">
+   <properties>
+    <property name="RenderLayer" value="Floor"/>
+    <property name="collision_type" value="none"/>
+    <property name="z_base" type="float" value="0"/>
+    <property name="z_range" value="0.0-0.9"/>
+   </properties>
+   <object id="10632" gid="28" x="-112" y="-688" width="64" height="64"/>
+   <object id="10633" gid="28" x="-48" y="-688" width="64" height="64"/>
+   <object id="10634" gid="28" x="16" y="-688" width="64" height="64"/>
+   <object id="10635" gid="28" x="80" y="-688" width="64" height="64"/>
+   <object id="10636" gid="28" x="144" y="-688" width="64" height="64"/>
+   <object id="10637" gid="28" x="208" y="-688" width="64" height="64"/>
+   <object id="10638" gid="28" x="272" y="-688" width="64" height="64"/>
+   <object id="10657" gid="28" x="272" y="-752" width="64" height="64"/>
+   <object id="10658" gid="28" x="272" y="-816" width="64" height="64"/>
+   <object id="10659" gid="28" x="272" y="-880" width="64" height="64"/>
+   <object id="10660" gid="28" x="272" y="-944" width="64" height="64"/>
+   <object id="10661" gid="28" x="272" y="-1008" width="64" height="64"/>
+   <object id="10662" gid="28" x="208" y="-752" width="64" height="64"/>
+   <object id="10663" gid="28" x="144" y="-752" width="64" height="64"/>
+   <object id="10664" gid="28" x="80" y="-752" width="64" height="64"/>
+   <object id="10665" gid="28" x="16" y="-752" width="64" height="64"/>
+   <object id="10666" gid="28" x="-48" y="-752" width="64" height="64"/>
+   <object id="10667" gid="28" x="-112" y="-752" width="64" height="64"/>
+   <object id="10668" gid="28" x="208" y="-816" width="64" height="64"/>
+   <object id="10669" gid="28" x="208" y="-880" width="64" height="64"/>
+   <object id="10670" gid="28" x="208" y="-944" width="64" height="64"/>
+   <object id="10671" gid="28" x="208" y="-1008" width="64" height="64"/>
+   <object id="10672" gid="28" x="144" y="-816" width="64" height="64"/>
+   <object id="10673" gid="28" x="144" y="-880" width="64" height="64"/>
+   <object id="10674" gid="28" x="144" y="-944" width="64" height="64"/>
+   <object id="10675" gid="28" x="144" y="-1008" width="64" height="64"/>
+   <object id="10676" gid="28" x="80" y="-816" width="64" height="64"/>
+   <object id="10677" gid="28" x="16" y="-816" width="64" height="64"/>
+   <object id="10678" gid="28" x="-48" y="-816" width="64" height="64"/>
+   <object id="10679" gid="28" x="-112" y="-816" width="64" height="64"/>
+   <object id="10680" gid="28" x="80" y="-880" width="64" height="64"/>
+   <object id="10681" gid="28" x="80" y="-944" width="64" height="64"/>
+   <object id="10682" gid="28" x="80" y="-1008" width="64" height="64"/>
+   <object id="10683" gid="28" x="16" y="-880" width="64" height="64"/>
+   <object id="10684" gid="28" x="-48" y="-880" width="64" height="64"/>
+   <object id="10685" gid="28" x="-112" y="-880" width="64" height="64"/>
+   <object id="10686" gid="28" x="16" y="-944" width="64" height="64"/>
+   <object id="10687" gid="28" x="16" y="-1008" width="64" height="64"/>
+  </objectgroup>
+  <objectgroup id="52" name="Decals">
+   <properties>
+    <property name="RenderLayer" value="Decals"/>
+    <property name="collision_type" value="surface"/>
+    <property name="z_base" type="float" value="1"/>
+    <property name="z_range" value="1.0-1.2"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="53" name="Corner_Simple">
+   <properties>
+    <property name="RenderLayer" value="CornerSimple"/>
+    <property name="collision_type" value="surface"/>
+    <property name="z_base" type="float" value="1.3"/>
+    <property name="z_range" value="1.3-1.4"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="54" name="Walls_NW" visible="0">
+   <properties>
+    <property name="RenderLayer" value="WallsNW"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="NW"/>
+    <property name="z_base" type="float" value="1.5"/>
+    <property name="z_range" value="1.5-1.7"/>
+   </properties>
+   <object id="10556" gid="65" x="-160" y="-992" width="64" height="160"/>
+   <object id="10557" gid="66" x="-160" y="-928" width="64" height="160"/>
+   <object id="10558" gid="65" x="-160" y="-672" width="64" height="160"/>
+   <object id="10559" gid="66" x="-160" y="-736" width="64" height="160"/>
+   <object id="10560" gid="65" x="-160" y="-800" width="64" height="160"/>
+   <object id="10561" gid="65" x="-160" y="-864" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="55" name="Walls_NE" visible="0">
+   <properties>
+    <property name="RenderLayer" value="WallsNE"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="NE"/>
+    <property name="z_base" type="float" value="1.6"/>
+    <property name="z_range" value="1.6-1.8"/>
+   </properties>
+   <object id="10575" gid="63" x="-96" y="-1056" width="64" height="160"/>
+   <object id="10577" gid="64" x="-32" y="-1056" width="64" height="160"/>
+   <object id="10578" gid="63" x="32" y="-1056" width="64" height="160"/>
+   <object id="10579" gid="63" x="96" y="-1056" width="64" height="160"/>
+   <object id="10580" gid="64" x="160" y="-1056" width="64" height="160"/>
+   <object id="10581" gid="63" x="224" y="-1056" width="64" height="160"/>
+   <object id="10582" gid="63" x="288" y="-1056" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="56" name="Objects_Low">
+   <properties>
+    <property name="RenderLayer" value="ObjectsLow"/>
+    <property name="z_base" type="float" value="1.9"/>
+    <property name="z_range" value="1.9-2.3"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="57" name="Objects_Medium">
+   <properties>
+    <property name="RenderLayer" value="ObjectsMedium"/>
+    <property name="z_base" type="float" value="2.4"/>
+    <property name="z_range" value="2.4-3.3"/>
+   </properties>
+  </objectgroup>
+  <group id="123" name="Stairs">
+   <objectgroup id="124" name="Stairs_Stack_1">
+    <properties>
+     <property name="RenderLayer" value="Stairs1"/>
+     <property name="z_base" type="float" value="2.35"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="125" name="Stairs_Stack_2">
+    <properties>
+     <property name="RenderLayer" value="Stairs2"/>
+     <property name="z_base" type="float" value="2.45"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="126" name="Stairs_Stack_3">
+    <properties>
+     <property name="RenderLayer" value="Stairs3"/>
+     <property name="z_base" type="float" value="2.55"/>
+    </properties>
+   </objectgroup>
+  </group>
+  <objectgroup id="58" name="Stairs">
+   <properties>
+    <property name="RenderLayer" value="Stairs"/>
+    <property name="collision_type" value="full"/>
+    <property name="z_base" type="float" value="3.3"/>
+    <property name="z_range" value="3.30-3.35"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="59" name="Walls_SE" visible="0">
+   <properties>
+    <property name="RenderLayer" value="WallsSE"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="SE"/>
+    <property name="z_base" type="float" value="3.4"/>
+    <property name="z_range" value="3.4-3.6"/>
+   </properties>
+   <object id="10568" gid="65" x="288" y="-688" width="64" height="160"/>
+   <object id="10569" gid="66" x="288" y="-752" width="64" height="160"/>
+   <object id="10571" gid="65" x="288" y="-816" width="64" height="160"/>
+   <object id="10572" gid="65" x="288" y="-880" width="64" height="160"/>
+   <object id="10573" gid="66" x="288" y="-944" width="64" height="160"/>
+   <object id="10574" gid="65" x="288" y="-1008" width="64" height="160"/>
+  </objectgroup>
+  <objectgroup id="60" name="Objects_High">
+   <properties>
+    <property name="RenderLayer" value="ObjectsHigh"/>
+    <property name="z_base" type="float" value="3.7"/>
+    <property name="z_range" value="3.7-4.0"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="61" name="Doors">
+   <properties>
+    <property name="RenderLayer" value="Doors"/>
+    <property name="collision_type" value="full"/>
+    <property name="z_base" type="float" value="3.6"/>
+    <property name="z_range" value="1.5-4.7"/>
+   </properties>
+  </objectgroup>
+  <group id="62" name="Corners">
+   <objectgroup id="63" name="Corner_NE">
+    <properties>
+     <property name="RenderLayer" value="CornerNE"/>
+     <property name="z_base" type="float" value="4.1"/>
+     <property name="z_range" value="4.1-4.15"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="64" name="Corner_SE">
+    <properties>
+     <property name="RenderLayer" value="CornerSE"/>
+     <property name="z_base" type="float" value="4.2"/>
+     <property name="z_range" value="4.2-4.25"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="65" name="Corner_SW">
+    <properties>
+     <property name="RenderLayer" value="CornerSW"/>
+     <property name="z_base" type="float" value="4.3"/>
+     <property name="z_range" value="4.3-4.35"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="66" name="Corner_NW">
+    <properties>
+     <property name="RenderLayer" value="CornerNW"/>
+     <property name="z_base" type="float" value="4.4"/>
+     <property name="z_range" value="4.4-4.45"/>
+    </properties>
+   </objectgroup>
+  </group>
+  <objectgroup id="67" name="Walls_SW" visible="0">
+   <properties>
+    <property name="RenderLayer" value="WallsSW"/>
+    <property name="collision_type" value="full"/>
+    <property name="wall_dir" value="SW"/>
+    <property name="z_base" type="float" value="4.5"/>
+    <property name="z_range" value="4.5-4.55"/>
+   </properties>
+   <object id="10562" gid="63" x="-96" y="-672" width="64" height="160"/>
+   <object id="10563" gid="64" x="-32" y="-672" width="64" height="160"/>
+   <object id="10564" gid="64" x="32" y="-672" width="64" height="160"/>
+   <object id="10565" gid="64" x="160" y="-672" width="64" height="160"/>
+   <object id="10566" gid="64" x="224" y="-672" width="64" height="160"/>
+   <object id="10567" gid="63" x="288" y="-672" width="64" height="160"/>
+   <object id="10586" gid="64" x="96" y="-672" width="64" height="160"/>
+  </objectgroup>
+  <group id="68" name="Stacks">
+   <objectgroup id="69" name="Stacks_Walls">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="wall_stack"/>
+     <property name="z_base" type="float" value="4.6"/>
+     <property name="z_range" value="4.6-999"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="70" name="Stacks_Decor">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="decor_stack"/>
+     <property name="z_base" type="float" value="4.7"/>
+     <property name="z_range" value="4.7-999"/>
+    </properties>
+   </objectgroup>
+   <objectgroup id="71" name="Stacks_RoofSupport">
+    <properties>
+     <property name="RenderLayer" value="Structure"/>
+     <property name="collision_type" value="none"/>
+     <property name="stack_type" value="roof_support"/>
+     <property name="z_base" type="float" value="4.8"/>
+     <property name="z_range" value="4.8-999"/>
+    </properties>
+   </objectgroup>
+  </group>
+ </group>
+ <group id="72" name="Roof">
+  <properties>
+   <property name="fade_when_inside" type="bool" value="false"/>
+   <property name="floor" type="int" value="3"/>
+   <property name="hide_when_inside" type="bool" value="true"/>
+  </properties>
+  <objectgroup id="73" name="Roof_Faces">
+   <properties>
+    <property name="RenderLayer" value="RoofFaces"/>
+    <property name="hide_when_inside" value="true"/>
+    <property name="z_base" type="float" value="20"/>
+    <property name="z_range" value="20.0-999"/>
+   </properties>
+  </objectgroup>
+  <group id="74" name="Roof_Stacks">
+   <group id="75" name="Roof_Stack_NE">
+    <objectgroup id="76" name="Roof_Stack_NE_1">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NE_1"/>
+      <property name="z_base" type="float" value="20.12"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="77" name="Roof_Stack_NE_2">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NE_2"/>
+      <property name="z_base" type="float" value="20.22"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="78" name="Roof_Stack_NE_3">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NE_3"/>
+      <property name="z_base" type="float" value="20.32"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="79" name="Roof_Stack_SE">
+    <objectgroup id="80" name="Roof_Stack_SE_1">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SE_1"/>
+      <property name="z_base" type="float" value="20.42"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="81" name="Roof_Stack_SE_2">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SE_2"/>
+      <property name="z_base" type="float" value="20.52"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="82" name="Roof_Stack_SE_3">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SE_3"/>
+      <property name="z_base" type="float" value="20.62"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="83" name="Roof_Stack_SW">
+    <objectgroup id="84" name="Roof_Stack_SW_1">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SW_1"/>
+      <property name="z_base" type="float" value="20.72"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="85" name="Roof_Stack_SW_2">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SW_2"/>
+      <property name="z_base" type="float" value="20.82"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="86" name="Roof_Stack_SW_3">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_SW_3"/>
+      <property name="z_base" type="float" value="20.92"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="87" name="Roof_Stack_NW">
+    <objectgroup id="88" name="Roof_Stack_NW_1">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NW_1"/>
+      <property name="z_base" type="float" value="21"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="89" name="Roof_Stack_NW_2">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NW_2"/>
+      <property name="z_base" type="float" value="21.1"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="90" name="Roof_Stack_NW_3">
+     <properties>
+      <property name="RenderLayer" value="RoofStack_NW_3"/>
+      <property name="z_base" type="float" value="21.2"/>
+     </properties>
+    </objectgroup>
+   </group>
+  </group>
+  <group id="91" name="RoofCorner_Stacks">
+   <group id="92" name="RoofCorner_Stack_N">
+    <objectgroup id="93" name="RoofCorner_Stack_N_1">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_N_1"/>
+      <property name="z_base" type="float" value="21.3"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="94" name="RoofCorner_Stack_N_2">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_N_2"/>
+      <property name="z_base" type="float" value="21.4"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="95" name="RoofCorner_Stack_N_3">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_N_2"/>
+      <property name="z_base" type="float" value="21.5"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="96" name="RoofCorner_Stack_E">
+    <objectgroup id="97" name="RoofCorner_Stack_E_1">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_E_1"/>
+      <property name="z_base" type="float" value="21.6"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="98" name="RoofCorner_Stack_E_2">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_E_2"/>
+      <property name="z_base" type="float" value="21.7"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="99" name="RoofCorner_Stack_E_3">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_E_2"/>
+      <property name="z_base" type="float" value="21.8"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="100" name="RoofCorner_Stack_S">
+    <objectgroup id="101" name="RoofCorner_Stack_S_1">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_S_1"/>
+      <property name="z_base" type="float" value="21.9"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="102" name="RoofCorner_Stack_S_2">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_S_2"/>
+      <property name="z_base" type="float" value="22"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="103" name="RoofCorner_Stack_S_3">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_S_2"/>
+      <property name="z_base" type="float" value="22.1"/>
+     </properties>
+    </objectgroup>
+   </group>
+   <group id="104" name="RoofCorner_Stack_W">
+    <objectgroup id="105" name="RoofCorner_Stack_W_1">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_W_1"/>
+      <property name="z_base" type="float" value="22.2"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="106" name="RoofCorner_Stack_W_2">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_W_2"/>
+      <property name="z_base" type="float" value="22.3"/>
+     </properties>
+    </objectgroup>
+    <objectgroup id="107" name="RoofCorner_Stack_W_3">
+     <properties>
+      <property name="RenderLayer" value="RoofCornerStack_W_2"/>
+      <property name="z_base" type="float" value="22.4"/>
+     </properties>
+    </objectgroup>
+   </group>
+  </group>
+  <objectgroup id="108" name="Roof_InvertedCorners">
+   <properties>
+    <property name="RenderLayer" value="RoofInvertedCorners"/>
+    <property name="z_base" type="float" value="23"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="109" name="Roof_Topper">
+   <properties>
+    <property name="RenderLayer" value="RoofTopper"/>
+    <property name="z_base" type="float" value="24"/>
+   </properties>
+  </objectgroup>
+ </group>
+ <group id="110" name="Collision">
+  <objectgroup id="111" name="Static">
+   <properties>
+    <property name="collision_precision" value="bounds"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="112" name="Dynamic">
+   <properties>
+    <property name="collision_precision" value="per_pixel"/>
+   </properties>
+  </objectgroup>
+  <objectgroup id="113" name="Triggers"/>
+ </group>
+ <group id="114" name="Entities">
+  <objectgroup id="115" name="SpawnPoints" offsetx="-64" offsety="48"/>
+  <objectgroup id="116" name="NPCs"/>
+  <objectgroup id="117" name="Enemies"/>
+  <objectgroup id="118" name="Interactables"/>
+ </group>
+</map>

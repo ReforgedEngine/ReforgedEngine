@@ -1,0 +1,125 @@
+CHARACTER SHEET INFORMATION
+
+
+The following pages contain information about the PVGames character sprite sheets.
+
+
+
+
+Key:
+* = Main hand weapon will be present for appropriate animation types
+# = Off hand weapon will be present for appropriate animation types
+$ = Shield will be present for appropriate animation types
+^ = Special object will be present (i.e. broom, instrument, etc)
+
+
+
+
+For each sprite sheet:
+Animation Frame size: 160x160 pixels
+Total sprite sheet size: 3840x4000 (24 frames wide by 25 frames tall)
+
+
+Sprite_1
+Animation Frame range: 0-583
+
+Name			  Total Frames		    Cardinal Frame Range		   Diagonal Frame Range
+*#$Walking 			64			0-31				32-63
+*#$Running 			64			64-95				96-127
+Idle 1 				24			128-139			140-151
+*#$Idle 2 			24			152-163 			164-175
+Idle 3 				24			176-187 			188-199
+Idle 4				24			200-211			212-223
+Idle 5 				24			224-235			236-247
+*Idle 6 	 			24			248-259 			260-271
+Kneel 				24			272-283 			284-295
+Interact				24			296-307			308-319
+Sleep				24			320-331 			332-343
+Sitting 	 			24			344-355 			356-367
+Throw 				24			368-379 			380-391
+*Use Item 			24			392-403 			404-415
+Casting Idle 			24			416-427 			428-439
+Casting	 			24			440-451 			452-463
+*#$Block Shield 		24			464-475 			476-487
+Block Unarmed 			24			488-499 			500-511
+*#$Evade			24			512-523 			524-535
+*#$Get Hit			24			536-547 			548-559
+Idle Unarmed 			24			560-571 			572-583
+
+
+
+
+
+Sprite_2
+Animation Frame range: 0-600
+
+Name			  Total Frames		    Cardinal Frame Range		   Diagonal Frame Range
+Punch 				24			0-11 				12-23
+Kick 				24			24-35 				36-47   
+Dead 				48			48-95 (includes all directions)
+*1-H Idle General		 24			96-107 				108-119
+*1-H Idle Slouched 		24			120-131 			132-143
+*#$1-H Idle W/Shield 		24			144-155 			156-167
+*#$Attack 1-H Overhead	24			168-179			180-191
+*#$Attack 1-H Side Slash 	24			192-203			204-215
+*#$Attack 1-H Stab 		24			216-227			228-239
+*2-H Idle General 1 		24			240-251			252-263
+*2-H Idle General 2 		24			264-275			276-287
+*2-H Idle Polearm 1 		24			288-299			300-311
+*2-H Idle Polearm Special 	24			312-323			324-335
+*Attack 2-H Slash 		24			336-347			348-359
+*Attack Polearm 		24			360-371			372-383
+*#Idle Dual-Wield 		24			384-395			396-407
+*#Attack Dual-Wield 		24			408-419			420-431
+*Idle Bow 			24			432-443			444-455
+*Idle XBow 			24			456-467			468-479
+*Attack Bow 			24			480-491			492-503
+*Attack XBow 			24			504-515			516-527
+*Idle Pistol 1 			24			528-539			540-551
+*Idle Pistol 2 			24			552-563			564-575
+*Idle Pistol 3 			24			576-587			588-599
+
+Sprite_3
+Animation Frame range: 0-600
+
+Name			  Total Frames		    Cardinal Frame Range		   Diagonal Frame Range
+*Attack Pistol 1		 	24			0-11 				12-23
+*Attack Pistol 2 			24			24-35 				36-47
+*Idle MG 1 			24			48-59 				60-71
+*Idle MG 2 			24			72-83 				84-95
+*Attack MG 1 			24			96-107	 			108-119
+*Idle Rifle 1 			24			120-131 			132-143
+*Attack Rifle 			24			144-155 			156-167
+*Critical Health Idle 1 		24			168-179 			180-191
+*Critical Health Idle 2 		24			192-203 			204-215
+*Critical Health Idle 3 		24			216-227 			228-239
+*#$Critical Health Idle 4 	24			240-251 			252-263
+Behavior Cleaning Object 	24			264-275 			276-287
+Behavior Begging 		24 			288-299 			300-311
+Behavior Crying 		24			312-323 			324-335
+Behavior Tapping Foot 		24			336-347 			348-359
+Behavior Hand Casual 		24			360-371 			372-383
+^Behavior Instrument 		24			384-395 			396-407
+Behavior Merchant 		24			408-419 			420-431
+Behavior Head Scratch 		24			432-443 			444-455
+^Behavior Sweeping 		24			456-467 			468-479	
+Behavior Sit and Write 		24			480-491 			492-503
+Behavior Sit on Ground 		24			504-515 			516-527
+Behavior Crouch 		24			528-539 			540-551
+Behavior Casual Sit 		24			552-563 			564-575
+Behavior Rest 			24			576-587 			588-599
+
+Sprite_4
+Animation Frame range: 0-279
+
+Name			  Total Frames		    Cardinal Frame Range		   Diagonal Frame Range
+*#$Sneak 			64			0-31 				32-63
+Pray/Meditate Standing		 24			64-75				76-87
+Pray/Meditate Kneel 		24			88-99 				100-111
+*#$Jump 			24			112-123 			124-135
+Drink 				24			136-147 			148-159
+Climb 				24			160-171 			172-183
+Behavior Sit and Tinker 		24			184-195 			196-207
+*#$Woozy 			24			208-219 			220-231
+*Attack 2-H Swing 		24			232-243 			244-255
+Search 				24			256-267 			268-279

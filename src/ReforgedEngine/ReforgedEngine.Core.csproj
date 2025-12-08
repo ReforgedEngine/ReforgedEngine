@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefineConstants>FREE_BUILD</DefineConstants>
+    <RootNamespace>ReforgedEngine.Core</RootNamespace>
+    <AssemblyTitle>2.5D Isometric Engine</AssemblyTitle>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
+    <PackageReference Include="TiledCS" Version="3.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Map\Objects\" />
+    <Folder Include="Map\TmxParser\" />
+    <Folder Include="Utils\Debug\" />
+  </ItemGroup>
+
+</Project>
